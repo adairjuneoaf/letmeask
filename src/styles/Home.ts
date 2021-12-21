@@ -104,6 +104,7 @@ export const Authentication = styled.div`
     }
 
     input {
+      width: 100%;
       padding: 0.5rem 1rem;
       margin: 0rem 0 1rem 0;
       font-size: 1rem;
