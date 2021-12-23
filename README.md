@@ -1,5 +1,5 @@
 <p align="center">
-  <img alt="LetMeAsk" src=".github/icon.svg" width="160px">
+  <img alt="LetMeAsk" src=".github/logo.svg" width="144px">
 </p>
 
 <h1 align="center">
@@ -9,6 +9,8 @@
 <br>
 
 ## 💻 Projeto
+
+Você pode acessar o projeto clicando neste link [Acessar Projeto](https://letmeask-adairjuneo.vercel.app)
 
 LetMeAsk é uma plataforma perfeita para criadores de conteúdos poderem criar salas de dúvidas/perguntas para seu público, de uma forma muito organizada e democrática.
 
