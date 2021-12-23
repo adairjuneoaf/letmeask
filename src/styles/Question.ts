@@ -20,6 +20,31 @@ export const Content = styled.div`
 
   border-radius: 0.5rem;
 
+  &.highlighted{
+    background: var(--background-purple-light);
+    border: 1px solid var(--background-purple);
+
+    .information-question{
+      .user{
+        p{
+          color: var(--gray-shadow);
+        }
+      }
+    }
+  }
+
+  &.answered{
+    background: var(--gray-light);
+
+    .information-question{
+      .user{
+        p{
+          color: var(--gray-shadow);
+        }
+      }
+    }
+  }
+
   .question {
     width: 100%;
     height: fit-content;
