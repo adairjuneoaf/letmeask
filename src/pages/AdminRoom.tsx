@@ -1,4 +1,4 @@
-import { Container, Header, Content } from "../styles/Room";
+import { Container, Header, Content } from "../styles/AdminRoom";
 import logoImg from "../assets/images/logo.svg";
 import { CodeRoom } from "../components/CodeRoom";
 import { Button } from "../components/Button";
@@ -17,7 +17,7 @@ type RoomParams = {
   id: string;
 };
 
-export function Room() {
+export function AdminRoom() {
   const params = useParams<RoomParams>();
   const roomId = params.id;
   const { questions, titleQuestion } = useRoom(roomId);
@@ -70,7 +70,11 @@ export function Room() {
     <Container>
       <Header>
         <img src={logoImg} alt="Logo da plataforma LetMeAsk" />
-        <CodeRoom code={params.id} />
+
+        <div>
+          <CodeRoom code={params.id} />
+          <Button isOutline={true}>Encerrar sala</Button>
+        </div>
       </Header>
 
       <Content>
@@ -78,30 +82,6 @@ export function Room() {
           <h3>{titleQuestion}</h3>
           {questions.length > 0 && <h4>{questions.length} Pergunta(s)</h4>}
         </div>
-        <form onSubmit={handleSendNewQuestion}>
-          <textarea placeholder="Qual é a sua dúvida?" onChange={(event) => setNewQuestion(event.target.value)} value={newQuestion} />
-          <div className="footer-textarea-question">
-            {user ? (
-              <div className="user-logged">
-                <img src={user.avatar} alt={user.name} />
-                <p>{user.name}</p>
-              </div>
-            ) : (
-              <div className="user-not-logged">
-                <p>
-                  Para enviar uma pergunta,
-                  <button type="button" onClick={handleSingInRoom}>
-                    faça seu login
-                  </button>
-                  .
-                </p>
-              </div>
-            )}
-            <Button type="submit" disabled={!user}>
-              Enviar pergunta
-            </Button>
-          </div>
-        </form>
 
         {questions.map((question) => {
           return <Question key={question.id} content={question.content} author={question.author} />;

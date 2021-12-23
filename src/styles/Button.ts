@@ -22,11 +22,22 @@ export const Container = styled.div`
 
     transition: background-color 0.2s;
 
+    &.outlined {
+      background: var(--danger);
+      color: var(--white-background);
+
+      transition: background-color 0.3s;
+
+      &:hover {
+        background: var(--hover-danger);
+      }
+    }
+
     &:hover {
       background: var(--hover-purple);
     }
 
-    &disabled {
+    &:disabled {
       opacity: 0.6;
       cursor: not-allowed;
     }

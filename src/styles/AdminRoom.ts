@@ -16,6 +16,13 @@ export const Header = styled.header`
   > img {
     width: 128px;
   }
+
+  > div {
+    display: flex;
+    align-items: center;
+
+    gap: 1rem;
+  }
 `;
 
 export const Content = styled.section`

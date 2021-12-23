@@ -2,18 +2,19 @@ import { Content } from "../styles/CodeRoom";
 import copyImg from "../assets/images/copy.svg";
 
 type RoomCodeProps = {
-  code: string;
+  code?: string;
 };
 
-export function CodeRoom(props: RoomCodeProps) {
+export function CodeRoom({ code }: RoomCodeProps) {
   function copyRoomCodeToClipboard() {
-    navigator.clipboard.writeText(props.code);
+    if (!code) return;
+    navigator.clipboard.writeText(code);
   }
 
   return (
     <Content onClick={copyRoomCodeToClipboard}>
       <img src={copyImg} alt="Icone copiar número da sala." />
-      <h3>Sala: {props.code}</h3>
+      <h3>Sala: {code}</h3>
     </Content>
   );
 }

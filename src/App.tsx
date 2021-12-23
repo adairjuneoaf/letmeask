@@ -11,6 +11,7 @@ import { GlobalStyle } from "./styles/global";
 //CONTEXTOS
 import { AuthContextProvider } from "./contexts/AuthContext";
 import { Room } from "./pages/Room";
+import { AdminRoom } from "./pages/AdminRoom";
 
 export function App() {
   return (
@@ -31,6 +32,7 @@ export function App() {
           <Route path="/" element={<Home />} />
           <Route path="/rooms/new" element={<NewRoom />} />
           <Route path="/rooms/:id" element={<Room />} />
+          <Route path="/admin/rooms/:id" element={<AdminRoom />} />
         </Routes>
       </BrowserRouter>
       <GlobalStyle />
